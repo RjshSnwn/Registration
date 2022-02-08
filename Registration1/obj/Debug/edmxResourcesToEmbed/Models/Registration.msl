@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegMVCModelStoreContainer" CdmEntityContainer="RegMVCEntities">
+    <EntitySetMapping Name="tblRegistrations">
+      <EntityTypeMapping TypeName="RegMVCModel.tblRegistration">
+        <MappingFragment StoreEntitySet="tblRegistration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Request_For" ColumnName="Request_For" />
+          <ScalarProperty Name="No_of_Livestock" ColumnName="No_of_Livestock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
