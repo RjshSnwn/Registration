@@ -125,7 +125,8 @@
             <div class="form-group d-flex justify-content-center">
                 @Html.LabelFor(model => model.District, htmlAttributes: new { @class = "control-label col-md-1 mr-3" })
                 <div class="col-sm-2">
-                    @Html.EditorFor(model => model.District, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.District, new SelectList(ViewBag.list), "Select Your District", htmlAttributes: new { @class = "form-control" })
+                    @*Html.EditorFor(model => model.District, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.District, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -133,7 +134,8 @@
             <div class="form-group d-flex justify-content-center">
                 @Html.LabelFor(model => model.Taluka, htmlAttributes: new { @class = "control-label col-md-1 mr-3" })
                 <div class="col-sm-2">
-                    @Html.EditorFor(model => model.Taluka, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.Taluka, new SelectList(ViewBag.list1), "Select Your Taluka", htmlAttributes: new { @class = "form-control" })
+                    @*Html.EditorFor(model => model.Taluka, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Taluka, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -141,7 +143,8 @@
             <div class="form-group d-flex justify-content-center">
                 @Html.LabelFor(model => model.Village, htmlAttributes: new { @class = "control-label col-md-1 mr-3" })
                 <div class="col-sm-2">
-                    @Html.EditorFor(model => model.Village, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.Village, new SelectList(ViewBag.list2), "Select Your Village", htmlAttributes: new { @class = "form-control" })
+                    @*Html.EditorFor(model => model.Village, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Village, "", new { @class = "text-danger" })
                 </div>
             </div>
