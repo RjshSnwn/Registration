@@ -26,5 +26,8 @@ namespace Registration1.Models
         }
     
         public virtual DbSet<tblRegistration> tblRegistrations { get; set; }
+        public virtual DbSet<tblDistrict> tblDistricts { get; set; }
+        public virtual DbSet<tblTaluka1> tblTaluka1 { get; set; }
+        public virtual DbSet<tblVillage> tblVillages { get; set; }
     }
 }

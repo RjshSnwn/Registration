@@ -1,21 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RegMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblDistrict">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="tblRegistration">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Date" Type="date" />
-    <Property Name="Time" Type="time" Precision="7" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
-    <Property Name="District" Type="varchar" MaxLength="50" />
-    <Property Name="Taluka" Type="varchar" MaxLength="50" />
-    <Property Name="Village" Type="varchar" MaxLength="50" />
-    <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
-    <Property Name="Request_For" Type="varchar" MaxLength="50" />
-    <Property Name="No_of_Livestock" Type="int" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="District" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Taluka" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Village" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_No" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Request_For" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="No_of_Livestock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblTaluka1">
+    <Key>
+      <PropertyRef Name="TalukaId" />
+    </Key>
+    <Property Name="TalukaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TalukaName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblVillage">
+    <Key>
+      <PropertyRef Name="VillageId" />
+    </Key>
+    <Property Name="VillageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VillageName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="RegMVCModelStoreContainer">
+    <EntitySet Name="tblDistrict" EntityType="Self.tblDistrict" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblRegistration" EntityType="Self.tblRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTaluka1" EntityType="Self.tblTaluka1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVillage" EntityType="Self.tblVillage" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

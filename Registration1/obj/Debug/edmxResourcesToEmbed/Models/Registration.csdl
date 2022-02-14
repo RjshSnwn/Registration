@@ -5,17 +5,41 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="Time" Type="Time" Precision="7" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Request_For" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="No_of_Livestock" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" Nullable="false" />
+    <Property Name="Time" Type="Time" Precision="7" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Request_For" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="No_of_Livestock" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityContainer Name="RegMVCEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tblRegistrations" EntityType="Self.tblRegistration" />
+    <EntitySet Name="tblDistricts" EntityType="RegMVCModel.tblDistrict" />
+    <EntitySet Name="tblTaluka1" EntityType="RegMVCModel.tblTaluka1" />
+    <EntitySet Name="tblVillages" EntityType="RegMVCModel.tblVillage" />
   </EntityContainer>
+  <EntityType Name="tblDistrict">
+    <Key>
+      <PropertyRef Name="DistrictId" />
+    </Key>
+    <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblTaluka1">
+    <Key>
+      <PropertyRef Name="TalukaId" />
+    </Key>
+    <Property Name="TalukaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TalukaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblVillage">
+    <Key>
+      <PropertyRef Name="VillageId" />
+    </Key>
+    <Property Name="VillageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VillageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

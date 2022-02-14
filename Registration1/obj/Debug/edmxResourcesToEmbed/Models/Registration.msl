@@ -17,5 +17,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblDistricts">
+      <EntityTypeMapping TypeName="RegMVCModel.tblDistrict">
+        <MappingFragment StoreEntitySet="tblDistrict">
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTaluka1">
+      <EntityTypeMapping TypeName="RegMVCModel.tblTaluka1">
+        <MappingFragment StoreEntitySet="tblTaluka1">
+          <ScalarProperty Name="TalukaName" ColumnName="TalukaName" />
+          <ScalarProperty Name="TalukaId" ColumnName="TalukaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVillages">
+      <EntityTypeMapping TypeName="RegMVCModel.tblVillage">
+        <MappingFragment StoreEntitySet="tblVillage">
+          <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+          <ScalarProperty Name="VillageId" ColumnName="VillageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

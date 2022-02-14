@@ -14,45 +14,43 @@ namespace Registration1.Models
     using System.ComponentModel.DataAnnotations;
     using System.Data;
 
-    public partial class tblRegistration : System.Web.UI.Page
-    {    
+    public partial class tblRegistration
+    {
         public int id { get; set; }
 
-        [Display(Name="Date")]
+        [Display(Name = "Date")]
         [Required(ErrorMessage = "Enter Date!")]
-        public Nullable<System.DateTime> Date { get; set; }
+        public System.DateTime Date { get; set; }
 
-        [Display(Name="Time")]
+        [Display(Name = "Time")]
         [Required(ErrorMessage = "Enter Current Time!")]
-        public Nullable<System.TimeSpan> Time { get; set; }
+        public System.TimeSpan Time { get; set; }
 
-        [Display(Name="Full Name")]
+        [Display(Name = "Full Name")]
         [Required(ErrorMessage = "Enter Full Name!")]
         public string Name { get; set; }
 
-        [Display(Name="District")]
+        [Display(Name = "District")]
         [Required(ErrorMessage = "Enter Your District!")]
         public string District { get; set; }
 
-        [Display(Name="Taluka")]
+        [Display(Name = "Taluka")]
         [Required(ErrorMessage = "Enter Your Taluka!")]
         public string Taluka { get; set; }
 
-        [Display(Name="Village")]
+        [Display(Name = "Village")]
         [Required(ErrorMessage = "Enter Your Village!")]
         public string Village { get; set; }
 
-        
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone Number")]
         [Required(ErrorMessage = "Phone Number Required!")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public string Phone_No { get; set; }
 
         [Required(ErrorMessage = "Enter Your Request here!")]
         public string Request_For { get; set; }
 
         [Required(ErrorMessage = "Enter How many Live Stock you have!")]
-        public Nullable<int> No_of_Livestock { get; set; }
+        public int No_of_Livestock { get; set; }
     }
 }

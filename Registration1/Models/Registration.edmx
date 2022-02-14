@@ -4,27 +4,50 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RegMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RegMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="DistrictId" />
+          </Key>
+          <Property Name="DistrictId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblRegistration">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" />
-          <Property Name="Time" Type="time" Precision="7" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="District" Type="varchar" MaxLength="50" />
-          <Property Name="Taluka" Type="varchar" MaxLength="50" />
-          <Property Name="Village" Type="varchar" MaxLength="50" />
-          <Property Name="Phone_No" Type="nvarchar" MaxLength="50" />
-          <Property Name="Request_For" Type="varchar" MaxLength="50" />
-          <Property Name="No_of_Livestock" Type="int" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="District" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Taluka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Village" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone_No" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Request_For" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="No_of_Livestock" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTaluka1">
+          <Key>
+            <PropertyRef Name="TalukaId" />
+          </Key>
+          <Property Name="TalukaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TalukaName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblVillage">
+          <Key>
+            <PropertyRef Name="VillageId" />
+          </Key>
+          <Property Name="VillageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VillageName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="RegMVCModelStoreContainer">
+          <EntitySet Name="tblDistrict" EntityType="Self.tblDistrict" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblRegistration" EntityType="Self.tblRegistration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTaluka1" EntityType="Self.tblTaluka1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVillage" EntityType="Self.tblVillage" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RegMVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -33,19 +56,43 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
-          <Property Name="Time" Type="Time" Precision="7" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Request_For" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="No_of_Livestock" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="Time" Type="Time" Precision="7" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="District" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Request_For" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="No_of_Livestock" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="RegMVCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblRegistrations" EntityType="Self.tblRegistration" />
+          <EntitySet Name="tblDistricts" EntityType="RegMVCModel.tblDistrict" />
+          <EntitySet Name="tblTaluka1" EntityType="RegMVCModel.tblTaluka1" />
+          <EntitySet Name="tblVillages" EntityType="RegMVCModel.tblVillage" />
         </EntityContainer>
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="DistrictId" />
+          </Key>
+          <Property Name="DistrictId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblTaluka1">
+          <Key>
+            <PropertyRef Name="TalukaId" />
+          </Key>
+          <Property Name="TalukaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TalukaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblVillage">
+          <Key>
+            <PropertyRef Name="VillageId" />
+          </Key>
+          <Property Name="VillageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VillageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -65,6 +112,30 @@
                 <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
                 <ScalarProperty Name="Request_For" ColumnName="Request_For" />
                 <ScalarProperty Name="No_of_Livestock" ColumnName="No_of_Livestock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDistricts">
+            <EntityTypeMapping TypeName="RegMVCModel.tblDistrict">
+              <MappingFragment StoreEntitySet="tblDistrict">
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTaluka1">
+            <EntityTypeMapping TypeName="RegMVCModel.tblTaluka1">
+              <MappingFragment StoreEntitySet="tblTaluka1">
+                <ScalarProperty Name="TalukaName" ColumnName="TalukaName" />
+                <ScalarProperty Name="TalukaId" ColumnName="TalukaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVillages">
+            <EntityTypeMapping TypeName="RegMVCModel.tblVillage">
+              <MappingFragment StoreEntitySet="tblVillage">
+                <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+                <ScalarProperty Name="VillageId" ColumnName="VillageId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

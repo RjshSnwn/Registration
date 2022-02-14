@@ -6,6 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="8f7fde2d698d47cf89c3c03f8fa37eac" Name="Diagram1">
         <EntityTypeShape EntityType="RegMVCModel.tblRegistration" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RegMVCModel.tblDistrict" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RegMVCModel.tblTaluka1" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="RegMVCModel.tblVillage" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
